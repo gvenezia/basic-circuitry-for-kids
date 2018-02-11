@@ -13,11 +13,8 @@
 
   </head>
   <body>
-
-    <!-- Welcome text with explanation of the game -->
-
     <!-- Bootstrap Navbar ( https://getbootstrap.com/docs/4.0/components/navbar/#nav ) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">How to Train a Dragon</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,11 +33,16 @@
 
     <!-- Main content of the page,  -->
     <div class="container-fluid">
+      <br>
+      <!-- Welcome text with explanation of the game -->
+      <div class="alert alert-info" role="alert">
+        We've given you a battery and motor below. Try connecting them correctly! You can choose from various options at the bottom of the page
+      </div>
 
       <!-- Exercise Container -->
       <div id="exercise-container">
         <div class="row justify-content-center">
-          <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 text-center">
+          <div class="battery-and-motor-pic col-xs-10 col-sm-8 col-md-6 col-lg-4 text-center">
             <img id="battery-pic" class="img-fluid " src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> Battery           
           </div>
         </div>
@@ -50,7 +52,7 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 text-center">
+          <div class="battery-and-motor-pic col-md-6 col-lg-4 text-center">
             Motor <img class="img-fluid " src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> 
           </div>
         </div>
@@ -59,28 +61,28 @@
       <!-- Grid of Choices -->
       <div id="choices-container">
         <div class="row">
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
-          <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="col-md-3 col-sm-4 col-6">
             <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
           </div>
 
@@ -88,31 +90,6 @@
       </div>
     
     </div> <!-- End page container -->
-
-
-
-
-    <!--
-    Navigation bar
-      buttons for the different levels
-      About page
-
-    
-    Landing page starts with problem 1
-      (tutorial video)
-      row
-        battery image 
-      row
-        user inputs their answer in this slot
-      row
-        motor image
-
-      
-      Submit button
-        after completion, show a link for the next exercise
-
-
--->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,4 +1,8 @@
-#battery-pic {
+.battery-and-motor-pic {
+	max-width: 200px;
+}
+
+#battery-pic {	
 	transform: rotate(180deg);
 }
 
