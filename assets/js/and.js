@@ -19,6 +19,9 @@
 
 			updateArduinoFile();
 
+			// Set timeout the same as the java sleep
+			// That way the user can't input new possibilities before the java file has finished running, otherwise they'd get out of sync
+
 	});
 
 	// If the second input button is pressed, change its color and text
