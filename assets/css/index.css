@@ -1,3 +1,8 @@
+#battery-pic {
+	transform: rotate(180deg);
+}
+
 #exercise-container {
 	margin: 25px auto;
 }
+
