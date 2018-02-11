@@ -1,0 +1,84 @@
+int led =13;
+int led1 =11;
+int led2 =8;
+
+void setup()
+{
+  Serial.begin(9600);
+ 
+  pinMode(led,OUTPUT);
+  pinMode(led1,OUTPUT);
+  pinMode(led2,OUTPUT);
+
+  digitalWrite(led, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, HIGH);
+
+
+}
+
+void loop() 
+{
+  delay(10);  
+  if (Serial.available()>0)
+  {
+    int Key=Serial.read();
+    if(Key==1)Close();
+    else if(Key==2)One();
+    else if(Key==3)Two();
+    else if(Key==4)Three();
+    else if(Key==5)Four();
+    else if(Key==6)Five();
+    else if(Key==7)Six();
+  }
+}
+
+void Close()
+{
+  digitalWrite(led, LOW);
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW);
+  //delay(20);
+}
+void One()
+{
+  digitalWrite(led, HIGH);
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW);
+  //delay(20);
+}
+void Two()
+{
+  digitalWrite(led, LOW);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, LOW);
+  //delay(20);
+}
+void Three()
+{
+  digitalWrite(led, LOW);
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, HIGH);
+  //delay(20);
+}
+void Four()
+{
+  digitalWrite(led, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, LOW);
+  //delay(20);
+}
+void Five()
+{
+  digitalWrite(led2, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led, LOW);
+  //delay(20);
+}
+void Six()
+{
+  digitalWrite(led, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, HIGH);
+  //delay(20);
+}

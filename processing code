@@ -1,0 +1,30 @@
+import processing.serial.*;
+Serial ComPort;
+String input[];
+void setup(){
+  String portName=Serial.list()[0];
+  ComPort = new Serial(this, "COM5",9600);
+  ComPort.bufferUntil('\n');
+}
+
+void draw(){
+  //input =loadStrings("C:/Users/Jai/Documents/aabbcc.txt");
+  //if(input!=null){
+    //if(input.length !=0){
+      //String s_last=input[0];
+      //int last =Integer.parseInt(s_last);
+      delay(10);
+      input =loadStrings("C:/Users/Jai/Documents/aabbcc.txt");
+      if(input.length!=0){
+        String s_current=input[0];
+        int current =Integer.parseInt(s_current);
+        //if(current!=last){
+        println(current);
+        //println(last);
+        ComPort.write(current);
+     // }
+    //}
+  //}
+ }
+//delay(10);
+}
