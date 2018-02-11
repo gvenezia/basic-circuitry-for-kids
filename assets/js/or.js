@@ -6,6 +6,9 @@
 	var input2Button = document.querySelector('#input-2-button');
 	var orOutput 	 = document.querySelector('#or-output');
 
+	// Assign the file.txt variable that will control the Arduino response
+	var arduinoCode  = -1;
+
 	// ============= Event Listeners ===============
 	// If the first input button is pressed, change its color and text
 	input1Button.addEventListener('click', function() {
@@ -39,12 +42,29 @@
 
 	// Check whether both inputs are turned on, if so, then change the output to green
 	function orCheck(){
-		if (input1Button.classList.contains('btn-success') || input2Button.classList.contains('btn-success')) {
+		if (input1Button.classList.contains('btn-success') && input2Button.classList.contains('btn-success')) {
 			orOutput.classList.remove('btn-danger');
 			orOutput.classList.add('btn-success');
-		} else {
+
+			arduinoCode = 7;
+
+		} else if ( input1Button.classList.contains('btn-success') ) { 
+			orOutput.classList.remove('btn-danger');
+			orOutput.classList.add('btn-success');
+
+			arduinoCode = 2;
+
+		} else if ( input2Button.classList.contains('btn-success') ) {
+			orOutput.classList.remove('btn-danger');
+			orOutput.classList.add('btn-success');
+
+			arduinoCode = 6;
+
+		} else { // No currents/inputs
 			orOutput.classList.remove('btn-success');
 			orOutput.classList.add('btn-danger');
+
+			arduinoCode = 1;
 		}
 	};
 

@@ -5,10 +5,9 @@
 	var input1Button = document.querySelector('#input-1-button');
 	var input2Button = document.querySelector('#input-2-button');
 	var andOutput 	 = document.querySelector('#and-output');
-	var phpContainer = document.querySelector('#php-container');
 
 	// Assign the file.txt variable that will control the Arduino response
-	var arduinoCode  = -1;
+	var arduinoCode  = 0;
 
 	// ============= Event Listeners ===============
 	// If the input button is pressed, change its color and text
@@ -31,6 +30,8 @@
 			andCheck();
 
 			updateArduinoFile();
+
+
 	});
 
 	// ================ Functions ==================
