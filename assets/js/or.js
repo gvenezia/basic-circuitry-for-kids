@@ -12,6 +12,8 @@
 			changeButtonStatus(this);
 
 			orCheck();
+
+			updateArduinoFile();
 	});
 
 	// If the second input button is pressed, change its color and text
@@ -19,6 +21,8 @@
 			changeButtonStatus(this);
 
 			orCheck();
+
+			updateArduinoFile();
 	});
 
 	// ================ Functions ==================
@@ -43,5 +47,18 @@
 			orOutput.classList.add('btn-danger');
 		}
 	};
-	
+
+	// function that writes html code with embedded php
+	function updateArduinoFile(){
+		// $.get("http://localhost:8080/and/" + arduinoCode);	
+
+		// Vanilla
+		var httpRequest = new XMLHttpRequest()
+		httpRequest.onreadystatechange = function (data) {
+		  // code
+		}
+		httpRequest.open('GET', "http://localhost:8080/and/" + arduinoCode);
+		httpRequest.send();
+	};
+
 })();

@@ -47,12 +47,13 @@
 
 	// Check whether both inputs are turned on, if so, then change the output to green
 	function andCheck(){
-		if ( input1Button.classList.contains('btn-success') ) {
-				andOutput.classList.remove('btn-success');
-				andOutput.classList.add('btn-danger');
+		if ( input1Button.classList.contains('btn-success') && input2Button.classList.contains('btn-success') ) {
+			andOutput.classList.remove('btn-danger');
+			andOutput.classList.add('btn-success');
 
-				// Change the arduino code accordingly
-				arduinoCode = 2;
+			// Change the arduino code accordingly
+			arduinoCode = 7;
+		
 		 } else if ( input2Button.classList.contains('btn-success') ) {
 			andOutput.classList.remove('btn-success');
 			andOutput.classList.add('btn-danger');
@@ -60,12 +61,12 @@
 			// Change the arduino code accordingly
 			arduinoCode = 4;
 
-		} else if ( input1Button.classList.contains('btn-success') && input2Button.classList.contains('btn-success') ) {
-			andOutput.classList.remove('btn-danger');
-			andOutput.classList.add('btn-success');
+		} else if ( input1Button.classList.contains('btn-success') ) {
+				andOutput.classList.remove('btn-success');
+				andOutput.classList.add('btn-danger');
 
-			// Change the arduino code accordingly
-			arduinoCode = 7;
+				// Change the arduino code accordingly
+				arduinoCode = 2;
 
 		} else if ( !(input1Button.classList.contains('btn-success') && input2Button.classList.contains('btn-success')) ) {
 			andOutput.classList.remove('btn-success');
