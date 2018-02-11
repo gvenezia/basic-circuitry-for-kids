@@ -1,0 +1,13 @@
+.exercise-container {
+	margin: 25px auto;
+}
+
+.btn-primary {
+	background-color: red;
+}
+
+
+#and-gate {
+	max-width: 200px;
+	transform: rotate(90deg);
+}

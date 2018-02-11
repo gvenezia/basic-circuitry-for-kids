@@ -9,13 +9,13 @@
 	border: 2px solid lightblue;
 }
 
+.exercise-container {
+	margin: 25px auto;
+}
+
 
 /* Id's ordered alphabetically */
 #battery-pic {	
 	transform: rotate(180deg);
-}
-
-#exercise-container {
-	margin: 25px auto;
 }
 
