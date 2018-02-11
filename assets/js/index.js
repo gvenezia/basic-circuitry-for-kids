@@ -19,4 +19,4 @@
 
 	}	
 
-}()); // End IIFE
+})(); // End IIFE
