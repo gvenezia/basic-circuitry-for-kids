@@ -50,16 +50,34 @@
       <br>
       <!-- Welcome text with explanation of the game -->
       <div class="alert alert-info" role="alert">
-        We've given you a battery and motor below. Try connecting them correctly! You can choose from various options at the bottom of the page
+        We've given you a battery and LED below. Try connecting them correctly! You can choose from various options at the bottom of the page. The LEDs light up when you select correctly.
       </div>
 
       <!-- Exercise Container -->
-      <div id="exercise-container">
+      <div id="exercise-container" style="position:relative;">
         <div class="row justify-content-center">
-          <div class="battery-and-motor-pic col-xs-10 col-sm-8 col-md-6 col-lg-4 text-center">
-            <img id="battery-pic" class="img-fluid " src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> Battery           
+          <div class="battery-and-motor-pic col-xs-10 col-sm-8 col-md-6 col-lg-4 text-center" style="position:relative;">
+            <img id="battery-pic" style="position:relative; " class="img-fluid " src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> Battery        
+            <div id="b-pos" onClick="b_pos()" style="position: absolute; top: 70px; left: 6px;">
+            <svg  height="100" width="100"><circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" /></svg> </div>  
+            <div id="b-neg" onClick="b_neg()" style="position: absolute; top: 70px; left: 92px;">
+            <svg  height="100" width="100"><circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" /></svg> </div>
           </div>
         </div>
+        
+        <div id="b-negpath" style="position: absolute; top: 115px; left: 675px; z-index: 999; display:none;">
+        <svg width="auto" height="auto" viewBox="0 0 90 100" preserveAspectRatio="xMaxYMax slice">
+
+              <line x1="10" y1="10000" x2="10" y2="0"
+                stroke-width="2" stroke="green"/>
+        </svg></div>
+
+        <div id="b-pospath" style="position: absolute; top: 115px; left: 760px; z-index: 999; display:none;"><svg width="auto" height="auto" viewBox="0 0 90 100">
+
+              <line x1="10" y1="100" x2="10" y2="0"
+                stroke-width="2" stroke="green"/>
+        </svg></div>
+
         <div class="row justify-content-center">
           <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 text-center">
             <img class="img-fluid " src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/help.png" alt="battery pic"> 
@@ -67,41 +85,16 @@
         </div>
         <div class="row justify-content-center">
           <div class="battery-and-motor-pic col-md-6 col-lg-4 text-center">
-            Motor <img class="img-fluid " src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> 
+            LEDs <img class="img-fluid " style="transform: scaleX(-1);" src="http://cdn.onlinewebfonts.com/svg/img_18264.png" alt="battery pic"> 
+            <div id="m-pos" onClick="m_pos()" style="position: absolute; top: -10px; left: 6px;">
+            <svg  height="100" width="100"><circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" /></svg> </div>  
+            <div id="m-neg" onClick="m_neg()" style="position: absolute; top: -10px; left: 92px;">
+            <svg  height="100" width="100"><circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" /></svg> </div>
           </div>
         </div>
       </div>
 
-      <!-- Grid of Choices -->
-      <div id="choices-container">
-        <div class="row">
-          <div id="correct-choice" class="choices col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-          <div class="wrong-choice choices  col-md-3 col-sm-4 col-6">
-            <img class="img-fluid" src="https://i.stack.imgur.com/TKeBB.png" alt="solution pic">            
-          </div>
-
-        </div>
-      </div>
+      
     
     </div> <!-- End page container -->
 
@@ -111,6 +104,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+    <script src="jquery.html-svg-connect.js" type="text/javascript"></script>
+
+      <script type="text/javascript">
+        var bp = 0; bn = 0; mp = 0; mn = 0;
+
+        function b_pos() {
+          console.log("b-pos clicked")
+          bp = 1;
+          //bn = 0;
+          if (mp == 1) {
+            document.getElementById("b-pospath").style.display = "inline";
+          }
+
+        }
+
+        function b_neg() {
+          bn = 1;
+          //bp = 0;
+          if (mn == 1) {
+            document.getElementById("b-negpath").style.display = "inline";
+          }
+
+        }
+
+        function m_pos() {
+          mp = 1;
+          //mn = 0;
+          if (bp == 1) {
+            document.getElementById("b-negpath").style.display = "inline";
+          }
+          updateArduinoFile();
+        }
+        function m_neg() {
+          mn = 1;
+          //mp = 0;
+          if (bn == 1) {
+            document.getElementById("b-pospath").style.display = "inline";
+          }
+        }
+
+        function updateArduinoFile(){
+          // $.get("http://localhost:8080/and/" + arduinoCode); 
+
+          // Vanilla
+          var httpRequest = new XMLHttpRequest()
+          httpRequest.onreadystatechange = function (data) {
+            // code
+          }
+          httpRequest.open('GET', "http://localhost:8080/and/7");
+          httpRequest.send();
+        };
+
+      </script>
     <!-- Local JS -->
     <script src="assets/js/index.js" type="text/javascript"></script>
   </body>
