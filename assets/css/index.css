@@ -1,7 +1,16 @@
+
+/* Classes ordered alphabetically */
 .battery-and-motor-pic {
 	max-width: 200px;
 }
 
+.choices:hover {
+	cursor: pointer;
+	border: 2px solid lightblue;
+}
+
+
+/* Id's ordered alphabetically */
 #battery-pic {	
 	transform: rotate(180deg);
 }

@@ -3,17 +3,18 @@
 	// Don't assign variables or events until the page is loaded
 	window.onload = function() {
 		var correctChoice = document.getElementById("correct-choice");
-		var wrongChoice = document.getElementById("wrong-choice");
+		var wrongChoice = document.getElementsByClassName("wrong-choice");
 
 		correctChoice.addEventListener("click", function(){
-
-
+			alert("that's correct!");
 		});
 
-		wrongChoice.addEventListener("click", function(){
+		for (let i = 0; i < wrongChoice.length; i++){
+			wrongChoice[i].addEventListener("click", function(){
+				alert("incorrect");
+			});			
+		}
 
-
-		});
 	}	
 
 }()); // End IIFE
