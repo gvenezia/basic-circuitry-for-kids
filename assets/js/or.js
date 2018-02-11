@@ -7,7 +7,10 @@
 	var orOutput 	 = document.querySelector('#or-output');
 
 	// Assign the file.txt variable that will control the Arduino response
-	var arduinoCode  = -1;
+	var arduinoCode  = 0;
+
+	// clear out any remaining lights from the last page
+	updateArduinoFile();
 
 	// ============= Event Listeners ===============
 	// If the first input button is pressed, change its color and text
@@ -52,7 +55,7 @@
 			orOutput.classList.remove('btn-danger');
 			orOutput.classList.add('btn-success');
 
-			arduinoCode = 2;
+			arduinoCode = 5;
 
 		} else if ( input2Button.classList.contains('btn-success') ) {
 			orOutput.classList.remove('btn-danger');
