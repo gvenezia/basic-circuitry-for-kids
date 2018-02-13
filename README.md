@@ -6,6 +6,8 @@ We wanted to create a fun, interactive introduction to computer science principl
 ## What it does
 A web interface provides small interactive lessons and games for children learning the basics of circuitry. This web interface interacts with an arduino board to produce feedback through lights.
 
+Watch a short demo on [Youtube](https://www.youtube.com/watch?v=myDzNeF9KVM)!
+
 ## How we built it
 The front-end is built with html, vanilla JS, and a sprinkling of CSS. The styling and responsive-design are handled by Bootstrap 4.0.
 
